@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1>Welcome to the Todo App</h1>
+            <p>This is an application that helps you to schedule your day to day activities </p>
+            <a href="{% url 'todo_index' %}" class="btn btn-danger">Click to Start</a>
+        </div>    
+    </div>
+
+{% endblock content %}

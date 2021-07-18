@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class='h2 text-center'><strong>To Do List</strong></h2>
+<ul class="list-group">
+    <div class="row mb-2">
+        <h3>Add Item</h3>
+        <form action="{% url 'add_todo' %}" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                <input type="text" name="add_todo" class='form-control mb-2' placeholder="Type here...">
+                <div class="input-group-append">
+                    <button class="btn-success" type="submit"> Create Todo </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% for item in todo_item_list %}                          
+        <li class="list-group-item">
+            {{ item.todo }}
+            <div class="float-end">
+                <form action="{% url 'delete_todo' item.id %}" method="POST">
+                    {% csrf_token %}
+                    <button class="btn btn-danger btn-sm mt-3">Delete</button>
+                </form>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

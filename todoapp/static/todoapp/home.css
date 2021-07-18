@@ -1,0 +1,15 @@
+.jumbotron{
+    background: linear-gradient(to top, rgba(79, 162, 218, 0.911), rgba(0,0,225, .7), lightblue);
+    color: white;
+    padding-top: 100px;
+    margin-top: 1rem; 
+    box-shadow: 5px 5px 2px lightblue;
+}
+
+.jumbotron .btn{
+    margin-bottom: 2rem;
+}
+
+.input-group-append{
+    padding-left: 1rem;
+}
